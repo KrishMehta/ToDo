@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="550.0" prefWidth="325.0" style="-fx-background-color: #c7dbfc#c7dbfc;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AddItemController">
+   <children>
+      <AnchorPane prefHeight="143.0" prefWidth="325.0" style="-fx-background-color: #559bfc #559bfc;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="132.0" layoutY="48.0" prefHeight="50.0" prefWidth="98.0" text="To-Do" textAlignment="CENTER">
+               <font>
+                  <Font name="Cambria Bold" size="32.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="88.0" layoutY="52.0">
+               <image>
+                  <Image url="@../extra/Tick.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="addButton" fitHeight="58.0" fitWidth="44.0" layoutX="141.0" layoutY="451.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../extra/Add.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="noTaskLabel" layoutX="86.0" layoutY="408.0" text="No tasks for today, yet!">
+         <font>
+            <Font name="Cambria Italic" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
