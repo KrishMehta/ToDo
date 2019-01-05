@@ -1,12 +1,10 @@
-package sample.controller;
+package com.krish.todo.controller;
 
-import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -40,7 +38,7 @@ public class AddItemInfoController {
     void initialize() {
         saveTask.setOnAction(event -> {
             try {
-                AnchorPane pane = FXMLLoader.load(getClass().getResource("/sample/view/AddItem.fxml"));
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("/com/krish/todo/view/AddItem.fxml"));
                 anchorPane.getChildren().setAll(pane);
             } catch (IOException e) {
                 e.printStackTrace();

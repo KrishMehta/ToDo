@@ -1,4 +1,4 @@
-package sample.database;
+package com.krish.todo.database;
 
 import java.util.HashMap;
 

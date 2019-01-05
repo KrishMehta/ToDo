@@ -1,4 +1,4 @@
-package sample.animation;
+package com.krish.todo.animation;
 
 import javafx.animation.TranslateTransition;
 import javafx.scene.Node;

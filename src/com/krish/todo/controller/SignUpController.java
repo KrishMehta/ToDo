@@ -1,32 +1,21 @@
-package sample.controller;
+package com.krish.todo.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-import sample.database.Database;
+import com.krish.todo.database.Database;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 /**
  * Class created by Krish
  */
 
 public class SignUpController extends Database {
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
 
     @FXML
     private AnchorPane anchorPane;
@@ -91,7 +80,7 @@ public class SignUpController extends Database {
     private void createUser() {
         database.put(getUsername(), getPassword());
         try {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/sample/view/Login.fxml"));
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/com/krish/todo/view/Login.fxml"));
             anchorPane.getChildren().setAll(pane);
         } catch (IOException e) {
             e.printStackTrace();

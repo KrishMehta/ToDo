@@ -1,4 +1,4 @@
-package sample.model;
+package com.krish.todo.model;
 
 /**
  * Class created by Krish
