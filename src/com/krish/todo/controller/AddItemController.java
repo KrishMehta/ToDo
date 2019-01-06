@@ -66,6 +66,8 @@ public class AddItemController {
 
     private List<TextField[]> tasks = new ArrayList<>();
     private Map<TextField, CheckBox> map = new HashMap<>();
+    private boolean found = false;
+    private boolean visible = false;
 
     @SuppressWarnings("Duplicates")
     @FXML
@@ -88,91 +90,94 @@ public class AddItemController {
         addButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             noTaskLabel.setVisible(false);
 
-            for (TextField[] task : tasks) {
-                if (task[0].isVisible()) {
-                    for (int i = 2; i < task.length; i++) {
-                        if (!task[i].isVisible()) {
-                            task[i].setVisible(true);
-                            map.get(task[i]).setVisible(true);
-                            break;
-                        } else {
-                            task[1].setVisible(true);
-                            map.get(task[1]).setVisible(true);
-                        }
-                    }
-                } else {
-                    if (task[0] == task1) {
-                        task1.setVisible(true);
-                        checkBox1.setVisible(true);
-                        break;
-                    }
-                }
-            }
-
-
-//            if (task5.isVisible()) {
-//                if (!task1.isVisible()) {
-//                    task1.setVisible(true);
-//                    checkBox1.setVisible(true);
-//                } else if (!task2.isVisible()) {
-//                    task2.setVisible(true);
-//                    checkBox2.setVisible(true);
-//                } else if (!task3.isVisible()) {
-//                    task3.setVisible(true);
-//                    checkBox3.setVisible(true);
-//                } else if (!task4.isVisible()) {
-//                    task4.setVisible(true);
-//                    checkBox4.setVisible(true);
-//                } else {
-//                    task6.setVisible(true);
-//                    checkBox6.setVisible(true);
+//            for (TextField[] task : tasks) {
+//                if (task[0].isVisible()) {
+//                    for (int i = 2; i < task.length; i++) {
+//                        if (!task[i].isVisible()) {
+//                            task[i].setVisible(true);
+//                            map.get(task[i]).setVisible(true);
+//                            found = true;
+//                            break;
+//                        }
+//                    }
+//                    if (!found) {
+//                        task[1].setVisible(true);
+//                        map.get(task[1]).setVisible(true);
+//                        break;
+//                    }
+//                    visible = true;
 //                }
-//            } else if (task4.isVisible()) {
-//                if (!task1.isVisible()) {
-//                    task1.setVisible(true);
-//                    checkBox1.setVisible(true);
-//                } else if (!task2.isVisible()) {
-//                    task2.setVisible(true);
-//                    checkBox2.setVisible(true);
-//                } else if (!task3.isVisible()) {
-//                    task3.setVisible(true);
-//                    checkBox3.setVisible(true);
-//                } else {
-//                    task5.setVisible(true);
-//                    checkBox5.setVisible(true);
-//                }
-//            } else if (task3.isVisible()) {
-//                if (!task1.isVisible()) {
-//                    task1.setVisible(true);
-//                    checkBox1.setVisible(true);
-//                } else if (!task2.isVisible()) {
-//                    task2.setVisible(true);
-//                    checkBox2.setVisible(true);
-//                } else {
-//                    task4.setVisible(true);
-//                    checkBox4.setVisible(true);
-//                }
-//            } else if (task2.isVisible()) {
-//                if (!task1.isVisible()) {
-//                    task1.setVisible(true);
-//                    checkBox1.setVisible(true);
-//                } else {
-//                    task3.setVisible(true);
-//                    checkBox3.setVisible(true);
-//                }
-//            } else if (task1.isVisible()) {
-//                task2.setVisible(true);
-//                checkBox2.setVisible(true);
-//            } else {
+//                found = false;
+//            }
+//            if (!visible) {
 //                task1.setVisible(true);
 //                checkBox1.setVisible(true);
 //            }
 
+            if (task5.isVisible()) {
+                if (!task1.isVisible()) {
+                    task1.setVisible(true);
+                    checkBox1.setVisible(true);
+                } else if (!task2.isVisible()) {
+                    task2.setVisible(true);
+                    checkBox2.setVisible(true);
+                } else if (!task3.isVisible()) {
+                    task3.setVisible(true);
+                    checkBox3.setVisible(true);
+                } else if (!task4.isVisible()) {
+                    task4.setVisible(true);
+                    checkBox4.setVisible(true);
+                } else {
+                    task6.setVisible(true);
+                    checkBox6.setVisible(true);
+                }
+            } else if (task4.isVisible()) {
+                if (!task1.isVisible()) {
+                    task1.setVisible(true);
+                    checkBox1.setVisible(true);
+                } else if (!task2.isVisible()) {
+                    task2.setVisible(true);
+                    checkBox2.setVisible(true);
+                } else if (!task3.isVisible()) {
+                    task3.setVisible(true);
+                    checkBox3.setVisible(true);
+                } else {
+                    task5.setVisible(true);
+                    checkBox5.setVisible(true);
+                }
+            } else if (task3.isVisible()) {
+                if (!task1.isVisible()) {
+                    task1.setVisible(true);
+                    checkBox1.setVisible(true);
+                } else if (!task2.isVisible()) {
+                    task2.setVisible(true);
+                    checkBox2.setVisible(true);
+                } else {
+                    task4.setVisible(true);
+                    checkBox4.setVisible(true);
+                }
+            } else if (task2.isVisible()) {
+                if (!task1.isVisible()) {
+                    task1.setVisible(true);
+                    checkBox1.setVisible(true);
+                } else {
+                    task3.setVisible(true);
+                    checkBox3.setVisible(true);
+                }
+            } else if (task1.isVisible()) {
+                task2.setVisible(true);
+                checkBox2.setVisible(true);
+            } else {
+                task1.setVisible(true);
+                checkBox1.setVisible(true);
+            }
         });
 
         map.forEach((k, v) -> v.setOnAction(event -> {
+            k.setText("");
             k.setVisible(false);
             v.setVisible(false);
+            v.setSelected(false);
         }));
 
     }
